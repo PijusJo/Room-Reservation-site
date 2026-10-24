@@ -1,8 +1,22 @@
-import React from 'react';
-import RoomView from '@/Pages/Rooms/SingleRoomView';
+import { useState } from 'react';
+import RoomView from './SingleRoomView';
+import RoomFilter from './RoomFilter'
 import type { Room } from '@/Types/Room';
+import type { RoomFilterOptions } from '@/Types/RoomFiltersOptions';
 
 function RoomList() {
+
+    const [inputs, setInputs] = useState<RoomFilterOptions>({
+        MinimumCapacity: 0,
+        Floor: '',
+        MustHaveProjector: false,
+        MustHaveTV: false,
+        MustHaveVideoConferencing: false,
+        MustHaveWhiteBoard: false
+    })
+
+
+
     // 1. Create a sample room object matching your Room interface
     const sampleRoom: Room = {
         name: 'Conference Alpha',
@@ -27,6 +41,10 @@ function RoomList() {
         status: false
     };
     return (
+    <div>
+        <div>
+            <RoomFilter Options={inputs} setOptions={setInputs}/>
+        </div>
         <div>
             <h1>Meeting Rooms</h1>
             {/* 2. Pass the room object into your RoomView component */}
@@ -34,6 +52,8 @@ function RoomList() {
             <RoomView room={sampleRooma} />
             <RoomView room={sampleRoom} />
         </div>
+
+    </div>
     );
 }
 
