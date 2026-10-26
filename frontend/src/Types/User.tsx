@@ -1,6 +1,6 @@
 export interface User {
-    FirstName:string,
-    lastName:string,
-    Id:number,
-    ActiveReservations:number
+    firstname:string,
+    lastname:string,
+    id:number,
+    activerezervations:number
 }

@@ -4,10 +4,10 @@ function UserView({user}: {user: User}){
     return(
         <div className = "border border-secondary border-3 p-3 Containter">
             <div className="row">
-                <div className="col">{user.FirstName}</div>
-                <div className="col">{user.lastName}</div>
-                <div className="col">{user.Id}</div>
-                <div className="col">{user.ActiveReservations}</div>
+                <div className="col">{user.firstname}</div>
+                <div className="col">{user.lastname}</div>
+                <div className="col">{user.id}</div>
+                <div className="col">{user.activerezervations}</div>
             </div>
             
         </div>
