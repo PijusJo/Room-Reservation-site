@@ -1,0 +1,32 @@
+## .NET Core / C# GitIgnore
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Tt]emp/
+
+# Visual Studio workspace and user-specific files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Backup / cache files
+*.cache
+*.opendb
+
+# NuGet packages
+**/packages/*
+*.nupkg
+
+# Published output
+[Bb]in/Release/
+[Bb]in/Debug/
+publish/
+
+# Environment / Secret files (Optional: Uncomment if you store local secrets in json files)
+# appsettings.Development.json
+# appsettings.Local.json
