@@ -29,74 +29,74 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
     }
 
     return(
-        <div className = "border border-secondary border-3 p-3 Containter row">
+        <div className = "border border-secondary border-3 p-3 container row">
             <div className = "col">
                 <div className="row"> 
-                    <div className="col-sm-2">MinimumCapacity:</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-4">MinimumCapacity:</div> 
+                    <div className="col-sm-4">
                         <input 
                             type="number" 
-                            name="MinimumCapacity" 
+                            name="minimumCapacity" 
                             onChange={handleChange} 
-                            value={Options.MinimumCapacity}
+                            value={Options.minimumCapacity}
                         />
                     </div>
                         
                 </div>
                 <div className="row"> 
-                    <div className="col-sm-2">Floor:</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-4">Location:</div> 
+                    <div className="col-sm-4">
                         <input 
                             type="text" 
-                            name="Floor" 
+                            name="location" 
                             onChange={handleChange} 
-                            value={Options.Floor}
+                            value={Options.location}
                         />
                     </div>
                 </div>
             </div>
             <div className = "col">
                 <div className = "row"> 
-                    <div className="col-sm-4">Must Have a Projector</div> 
+                    <div className="col-sm-8">Must Have a Projector</div> 
                     <div className="col-sm-2">
                         <input 
                             type="checkbox"
-                            name="MustHaveProjector" 
+                            name="mustHaveProjector" 
                             onChange={handleChange} 
-                            checked={Options.MustHaveProjector}
+                            checked={Options.mustHaveProjector}
                         />
                     </div>
                 </div>
                 <div className = "row">
-                    <div className="col-sm-4">Must Have a TV Screen</div> 
+                    <div className="col-sm-8">Must Have a TV Screen</div> 
                     <div className="col-sm-2">
                         <input 
                             type="checkbox"
-                            name="MustHaveTV" 
+                            name="mustHaveTV" 
                             onChange={handleChange} 
-                            checked={Options.MustHaveTV}
+                            checked={Options.mustHaveTV}
                         />
                     </div>
                 </div>
                 <div className = "row">
-                    <div className="col-sm-4">Must Have Video Conferencing</div> 
+                    <div className="col-sm-8">Must Have Video Conferencing</div> 
                     <div className="col-sm-2">
                         <input 
                             type="checkbox"
-                            name="MustHaveVideoConferencing" 
+                            name="mustHaveVideoConferencing" 
                             onChange={handleChange} 
-                            checked={Options.MustHaveVideoConferencing}
+                            checked={Options.mustHaveVideoConferencing}
                         />
                     </div>
                 </div>
                 <div className = "row"> 
-                    <div className="col-sm-4">Must Have a WhiteBoard</div> 
+                    <div className="col-sm-8">Must Have a WhiteBoard</div> 
                     <div className="col-sm-2">
                         <input 
                             type="checkbox"
-                            name="MustHaveWhiteBoard" 
+                            name="mustHaveWhiteBoard" 
                             onChange={handleChange} 
-                            checked={Options.MustHaveWhiteBoard}
+                            checked={Options.mustHaveWhiteBoard}
                             />
                     </div>
                 </div>

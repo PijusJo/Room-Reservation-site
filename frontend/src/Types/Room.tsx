@@ -2,7 +2,7 @@ export interface Room {
     name: string;
     id: number;
     capacity: number;
-    floor: string;
+    location: string;
     hasProjector: boolean;
     hasTV: boolean;
     hasVideoConferencing: boolean;

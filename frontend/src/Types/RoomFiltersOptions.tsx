@@ -1,8 +1,8 @@
 export interface RoomFilterOptions {
-    MinimumCapacity: number;
-    Floor: string;
-    MustHaveProjector: boolean;
-    MustHaveTV: boolean;
-    MustHaveVideoConferencing: boolean;
-    MustHaveWhiteBoard: boolean;
+    minimumCapacity: number;
+    location: string;
+    mustHaveProjector: boolean;
+    mustHaveTV: boolean;
+    mustHaveVideoConferencing: boolean;
+    mustHaveWhiteBoard: boolean;
 }

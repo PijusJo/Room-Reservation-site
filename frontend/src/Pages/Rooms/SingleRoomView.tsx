@@ -13,7 +13,7 @@ function RoomView({room}: {room: Room}) {
                     }<CheckmakrOrX condition = {room.status}/>
                 </div>
                 <div className = "border border-secondary rounded p-1 bg-light col-sm-1"> Id: {room.id} </div>
-                <div className = "border border-secondary rounded p-1 bg-light col-sm-2"> Location: {room.floor}</div>
+                <div className = "border border-secondary rounded p-1 bg-light col-sm-2"> Location: {room.location}</div>
                 <div className = "border border-secondary rounded p-1 bg-light col-sm"> {room.name} </div>
             </div>
             <div className = "border border-secondary rounded p-1 bg-light shadow-sm row">
