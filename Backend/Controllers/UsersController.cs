@@ -11,7 +11,7 @@ namespace Backend.Controllers
     {
 
         [HttpGet]
-        public ActionResult<User> GetAll()
+        public ActionResult<IEnumerable<User>> GetAll()
         {
             return Ok(context.Users.ToList());
         }

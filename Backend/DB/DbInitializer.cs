@@ -34,8 +34,8 @@ namespace Backend.DB
             Reservation[] reservations =
             {
                 new Reservation(
-                    room: rooms[0],
-                    user: users[0],
+                    roomId: 0,
+                    userid: 0,
                     meetingTitle: "Q3 Strategy Planning",
                     startDate: new DateOnly(2026, 6, 1),
                     endDate: new DateOnly(2026, 6, 3),
@@ -43,8 +43,8 @@ namespace Backend.DB
                     attendees: 8
                 ),
                 new Reservation(
-                    room: rooms[1],
-                    user: users[1],
+                    roomId: 1,
+                    userid: 1,
                     meetingTitle: "UI/UX Design Sync",
                     startDate: new DateOnly(2026, 6, 5),
                     endDate: new DateOnly(2026, 6, 5),
@@ -52,8 +52,8 @@ namespace Backend.DB
                     attendees: 4
                 ),
                 new Reservation(
-                    room: rooms[2],
-                    user: users[2],
+                    roomId: 2,
+                    userid: 2,
                     meetingTitle: "Client Presentation",
                     startDate: new DateOnly(2026, 6, 10),
                     endDate: new DateOnly(2026, 6, 12),
@@ -61,8 +61,8 @@ namespace Backend.DB
                     attendees: 12
                 ),
                 new Reservation(
-                    room: rooms[3],
-                    user: users[3],
+                    roomId: 3,
+                    userid: 3,
                     meetingTitle: "Code Review & Refactoring",
                     startDate: new DateOnly(2026, 6, 15),
                     endDate: new DateOnly(2026, 6, 15),
@@ -70,8 +70,8 @@ namespace Backend.DB
                     attendees: 2
                 ),
                 new Reservation(
-                    room: rooms[4],
-                    user: users[4],
+                    roomId: 4,
+                    userid: 4,
                     meetingTitle: "Team Retrospective",
                     startDate: new DateOnly(2026, 6, 20),
                     endDate: new DateOnly(2026, 6, 21),

@@ -25,7 +25,6 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
         }
         )
         );
-
     }
 
     return(

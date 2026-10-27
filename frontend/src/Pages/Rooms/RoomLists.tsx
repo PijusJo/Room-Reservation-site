@@ -4,8 +4,10 @@ import RoomFilter from './RoomFilter'
 import type { Room } from '@/Types/Room';
 import {API_URL} from '@/constants';
 import type { RoomFilterOptions } from '@/Types/RoomFiltersOptions';
+import type { User } from '@/Types/User';
+import { ReserveRoomButton } from './ReserveRoomButton';
 
-function RoomList() {
+function RoomList({user}: {user:User}) {
 
     const [inputs, setInputs] = useState<RoomFilterOptions>({
         minimumCapacity: 0,
@@ -69,7 +71,11 @@ function RoomList() {
         <button onClick={handeApplyFilters}>ApplyFilters</button>
         {   
             rooms.map((currentroom)=>(
-                <RoomView key={currentroom.id} room = {currentroom}/>
+                <div key={currentroom.id}>
+                    <RoomView room = {currentroom}/>
+                    <ReserveRoomButton room = {currentroom} user = {user} />
+                </div>
+                
             ))
         }
     </div>

@@ -1,12 +1,8 @@
 import type { Room } from '@/Types/Room'
 import CheckmakrOrX from './CheckmarkOrX'
+import type { User } from '@/Types/User';
 
 function RoomView({room}: {room: Room}) {
-
-
-
-
-
     return(
         <div style={{ backgroundColor: '#b6b5b5' }} className = "border border-secondary border-3 p-3">
             <div className = "row">
@@ -41,8 +37,6 @@ function RoomView({room}: {room: Room}) {
                         <CheckmakrOrX condition = {room.hasWhiteBoard}/>Whiteboard
                     </div>
                 </div>
-            </div>
-            <div className='row'>
             </div>
         </div>
     )

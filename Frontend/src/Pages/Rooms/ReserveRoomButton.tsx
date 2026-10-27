@@ -1,14 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type {Room} from '@/Types/Room'
+import type {User} from '@/Types/User'
 
-function ReserveRoomButton({room}: {room: Room}) {
-    const navigate = useNavigate();
-    const myData = { RoomId: room.id, Room:room};
+interface ReserveButtonViewProps {
+  room: Room;
+  user: User;
+}
 
-    const reserveRoom = () => {
-        // Pass data using the `state` object
-        navigate('@/Pages/Reserve/main.tsx', { state: myData });
-    };
-
-    return <button onClick={reserveRoom}>Reserve This room</button>;
+export function ReserveRoomButton({ room, user }: ReserveButtonViewProps) {
+    return (
+    <div>
+        <Link 
+            to="/Reserve" 
+            state={{ Room: room, User: user }} 
+            className="btn btn-primary" // Makes it look like a button
+        >
+            Reserve This Room
+        </Link>
+    </div>
+        
+    );
 }

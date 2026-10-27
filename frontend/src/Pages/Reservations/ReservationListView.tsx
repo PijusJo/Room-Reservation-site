@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import SingleReservationView from './SingleReservationView'
 import type { Reservation } from '@/Types/Reservation';
+import type { User } from '@/Types/User';
 
-function ReservationListView(){
+function ReservationListView({user}: {user:User}){
     const [users, setUsers] = useState<Reservation[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null); 

@@ -49,10 +49,10 @@ namespace Backend.Models
         }
         
         //TODO BUILDER
-        public Reservation( Room room, User user, string meetingTitle, DateOnly startDate, DateOnly endDate, string status, int attendees)
+        public Reservation( int roomId, int userid, string meetingTitle, DateOnly startDate, DateOnly endDate, string status, int attendees)
         {
-            this.room = room;
-            this.user = user;
+            this.roomId = roomId;
+            this.userId = userid;
             this.meetingTitle = meetingTitle;
             this.startDate = startDate;
             this.endDate = endDate;
@@ -60,19 +60,15 @@ namespace Backend.Models
             this.attendees = attendees;
         }
 
-        public Interval GetInterval()
+        public Reservation( ReservationInfo model)
         {
-            return new Interval(this.startDate, this.endDate);
-        }
-
-        public static List<Interval> GetIntervals(ICollection<Reservation> reservations)
-        {
-            List<Interval> usedDays = new List<Interval>();
-            foreach (Reservation reservation in reservations) {
-                usedDays.Add(reservation.GetInterval());
-
-            }
-            return usedDays;
+            roomId = model.RoomId;
+            userId = model.UserId;
+            meetingTitle = model.MeetingTitle;
+            startDate = model.StartDate;
+            endDate = model.EndDate;
+            status = model.Status;
+            attendees = model.AttendeeNumber;
         }
     }
 }

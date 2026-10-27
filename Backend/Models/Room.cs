@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Backend.DB;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Backend.Models
@@ -43,6 +44,7 @@ namespace Backend.Models
             this.hasWhiteBoard = hasWhiteBoard;
             this.status = status;
         }
+
 
     }
 }
