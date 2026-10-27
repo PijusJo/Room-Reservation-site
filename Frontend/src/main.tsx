@@ -1,10 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import UserListView from './UserListview'
+import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 createRoot(document.getElementById('root')!).render(
+  
   <StrictMode>
-    <UserListView/>
+    <App/>
   </StrictMode>,
 )

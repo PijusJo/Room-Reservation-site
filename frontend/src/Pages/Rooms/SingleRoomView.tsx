@@ -3,29 +3,47 @@ import CheckmakrOrX from './CheckmarkOrX'
 
 function RoomView({room}: {room: Room}) {
 
+
+
+
+
     return(
-        <div style={{ backgroundColor: '#b6b5b5' }} className = "border border-secondary border-3 p-3 Containter">
-            <div className = " row">
-                <div className = "border border-secondary rounded p-1 bg-light col-sm-1"> 
-                    {room.status ?(
-                        <a>Active</a>
-                    ):  <a>inactive</a> 
-                    }<CheckmakrOrX condition = {room.status}/>
+        <div style={{ backgroundColor: '#b6b5b5' }} className = "border border-secondary border-3 p-3">
+            <div className = "row">
+                <div className = "col-sm-6">
+                    <div className = "border border-secondary rounded p-1 bg-light"> 
+                        <div>
+                            <CheckmakrOrX condition = {room.status}/>
+                            {room.status ?(
+                                <a>Active</a>
+                            ):  <a>inactive</a> 
+                            }    
+                        </div>
+                    </div>
+                    <div className = "border border-secondary rounded p-1 bg-light"> Id: {room.id} </div>
+                    <div className = "border border-secondary rounded p-1 bg-light"> Location: {room.location}</div>
+                    <div className = "border border-secondary rounded p-1 bg-light"> {room.name} </div>
                 </div>
-                <div className = "border border-secondary rounded p-1 bg-light col-sm-1"> Id: {room.id} </div>
-                <div className = "border border-secondary rounded p-1 bg-light col-sm-2"> Location: {room.location}</div>
-                <div className = "border border-secondary rounded p-1 bg-light col-sm"> {room.name} </div>
+                <div className = "col-sm-6">
+                    <div className = "border border-secondary rounded p-1 bg-light">
+                        capacity: {room.capacity}
+                    </div>
+                    <div className = "border border-secondary rounded p-1 bg-light">
+                        <CheckmakrOrX condition = {room.hasProjector}/>Projector
+                    </div>
+                    <div className = "border border-secondary rounded p-1 bg-light">
+                        <CheckmakrOrX condition = {room.hasTV}/>TV Screen
+                    </div>
+                    <div className = "border border-secondary rounded p-1 bg-light">
+                        <CheckmakrOrX condition = {room.hasVideoConferencing}/>Video conferencing
+                    </div>
+                    <div className = "border border-secondary rounded p-1 bg-light">
+                        <CheckmakrOrX condition = {room.hasWhiteBoard}/>Whiteboard
+                    </div>
+                </div>
             </div>
-            <div className = "border border-secondary rounded p-1 bg-light shadow-sm row">
-                <div className = "col-sm">capacity: {room.capacity}</div>
-                <div className = "col-sm">Projector<CheckmakrOrX condition = {room.hasProjector}/></div>
-                <div className = "col-sm">TV Screen<CheckmakrOrX condition = {room.hasTV}/></div>
-                <div className = "col-sm">Video conferencing<CheckmakrOrX condition = {room.hasVideoConferencing}/></div>
-                <div className = "col-sm">Whiteboard<CheckmakrOrX condition = {room.hasWhiteBoard}/></div>
+            <div className='row'>
             </div>
-            
-            
-            
         </div>
     )
 

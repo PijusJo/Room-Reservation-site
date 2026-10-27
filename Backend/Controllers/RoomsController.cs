@@ -8,7 +8,7 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RoomController(AppDbContext context) : Controller
+    public class RoomsController(AppDbContext context) : Controller
     {
         [HttpGet("{id}")]
         public ActionResult<Room> GetById(int id)

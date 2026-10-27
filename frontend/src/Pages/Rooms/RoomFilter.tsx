@@ -29,9 +29,9 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
     }
 
     return(
-        <div className = "border border-secondary border-3 p-3 container row">
+        <div className = "border border-secondary border-3 p-3 row">
             <div className = "col">
-                <div className="row"> 
+                <div className="row">
                     <div className="col-sm-4">MinimumCapacity:</div> 
                     <div className="col-sm-4">
                         <input 
@@ -41,7 +41,6 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             value={Options.minimumCapacity}
                         />
                     </div>
-                        
                 </div>
                 <div className="row"> 
                     <div className="col-sm-4">Location:</div> 
@@ -57,8 +56,7 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
             </div>
             <div className = "col">
                 <div className = "row"> 
-                    <div className="col-sm-8">Must Have a Projector</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-1">
                         <input 
                             type="checkbox"
                             name="mustHaveProjector" 
@@ -66,10 +64,10 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             checked={Options.mustHaveProjector}
                         />
                     </div>
+                    <div className="col-sm-8">Must Have a Projector</div> 
                 </div>
                 <div className = "row">
-                    <div className="col-sm-8">Must Have a TV Screen</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-1">
                         <input 
                             type="checkbox"
                             name="mustHaveTV" 
@@ -77,10 +75,10 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             checked={Options.mustHaveTV}
                         />
                     </div>
+                    <div className="col-sm-8">Must Have a TV Screen</div> 
                 </div>
                 <div className = "row">
-                    <div className="col-sm-8">Must Have Video Conferencing</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-1">
                         <input 
                             type="checkbox"
                             name="mustHaveVideoConferencing" 
@@ -88,10 +86,10 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             checked={Options.mustHaveVideoConferencing}
                         />
                     </div>
+                    <div className="col-sm-8">Must Have Video Conferencing</div> 
                 </div>
                 <div className = "row"> 
-                    <div className="col-sm-8">Must Have a WhiteBoard</div> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-1">
                         <input 
                             type="checkbox"
                             name="mustHaveWhiteBoard" 
@@ -99,6 +97,7 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             checked={Options.mustHaveWhiteBoard}
                             />
                     </div>
+                    <div className="col-sm-8">Must Have a WhiteBoard</div> 
                 </div>
             </div>
             

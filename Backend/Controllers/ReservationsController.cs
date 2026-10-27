@@ -7,12 +7,12 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ReservationController(AppDbContext _context): Controller
+    public class ReservationsController(AppDbContext _context): Controller
     {
         [HttpGet]
         public ActionResult<Reservation> GetAll()
         {
-            return Ok(_context.Users.ToList());
+            return Ok(_context.Reservations.ToList());
         }
 
         [HttpGet("{id}")]

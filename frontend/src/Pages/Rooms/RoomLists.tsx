@@ -30,9 +30,9 @@ function RoomList() {
         });
         const queryString = params.toString();
 
-        var url = `${API_URL}/Room?${queryString}`;
+        var url = `${API_URL}/Rooms?${queryString}`;
         if(queryString=='') {
-            url = `${API_URL}/Room`;
+            url = `${API_URL}/Rooms`;
         }
         fetch(url)
             .then((response) => {
@@ -65,26 +65,13 @@ function RoomList() {
     return (
         
     <div className='container'>
-        <div className='row'>
-            <div className='col-8'>
-                <RoomFilter Options={inputs} setOptions={setInputs}/>
-            </div>
-            <div className='border border-secondary border-3 p-3 col-sm-4'>
-                <button onClick={handeApplyFilters}>ApplyFilters</button>
-            </div>
-        </div>
-        
-        
-        <div>
-            {   
-                rooms.map((currentroom)=>(
-                    <RoomView key={currentroom.id} room = {currentroom}/>
-                ))
-            }
-        </div>
-        
-        
-
+        <RoomFilter Options={inputs} setOptions={setInputs}/>
+        <button onClick={handeApplyFilters}>ApplyFilters</button>
+        {   
+            rooms.map((currentroom)=>(
+                <RoomView key={currentroom.id} room = {currentroom}/>
+            ))
+        }
     </div>
     );
 }

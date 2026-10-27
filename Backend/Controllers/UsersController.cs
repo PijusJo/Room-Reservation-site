@@ -7,7 +7,7 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController(AppDbContext context) : Controller
+    public class UsersController(AppDbContext context) : Controller
     {
 
         [HttpGet]
