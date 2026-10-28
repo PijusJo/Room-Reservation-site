@@ -1,13 +1,10 @@
-HOW TO LAUNCH
+HOW TO LAUNCH<br>
 
-FRONTEND:
-in Room-Reservation-site/Frontend
-enter in terminal:
-npm install
-and then 
-npm run dev
+FRONTEND:<br>
+```cd Room-Reservation-site/Frontend```<br>
+```npm install```<br>
+```npm run dev```<br>
 
-BACKEND:
-in Room-Reservation-site/Backend
-open the solution and build, or run this in terminal:
-dotnet build
+BACKEND:<br>
+```cd Room-Reservation-site/Backend```<br>
+```dotnet build```<br>
