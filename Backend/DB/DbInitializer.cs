@@ -39,15 +39,15 @@ namespace Backend.DB
                     meetingTitle: "Q3 Strategy Planning",
                     startDate: new DateOnly(2026, 6, 1),
                     endDate: new DateOnly(2026, 6, 3),
-                    status: "Booked",
+                    status: "Completed",
                     attendees: 8
                 ),
                 new Reservation(
                     roomId: 2,
                     userid: 2,
                     meetingTitle: "UI/UX Design Sync",
-                    startDate: new DateOnly(2026, 6, 5),
-                    endDate: new DateOnly(2026, 6, 5),
+                    startDate: new DateOnly(2026, 11, 5),
+                    endDate: new DateOnly(2026, 11, 5),
                     status: "Booked",
                     attendees: 4
                 ),
@@ -57,7 +57,7 @@ namespace Backend.DB
                     meetingTitle: "Client Presentation",
                     startDate: new DateOnly(2026, 6, 10),
                     endDate: new DateOnly(2026, 6, 12),
-                    status: "Booked",
+                    status: "Completed",
                     attendees: 12
                 ),
                 new Reservation(
