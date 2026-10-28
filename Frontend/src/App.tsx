@@ -40,6 +40,8 @@ function App() {
                     <Link className="nav-link" to="/Users">Users</Link>
                     <Link className="nav-link" to="/Rooms">Rooms</Link>
                     <Link className="nav-link" to="/Reservations">Reservations</Link>
+                    
+                    <Link className="nav-link" to="/Reserve" state={{userId: currentUser.id}} >Reserve a Room</Link>
                     <div className="d-flex flex-row align-items-center gap-3 text-nowrap ms-auto">
                         <span className="fw-bold">User Id: {currentUser.id}</span>
                         <span className="fw-bold">{currentUser.firstName} {currentUser.lastName}</span>
@@ -54,7 +56,7 @@ function App() {
                     <Route path="/Users" element={<UserListPage user={currentUser}/>} />
                     <Route path="/Rooms" element={<RoomsListPage user={currentUser} />} />
                     <Route path="/Reservations" element={<ReservationListPage />} />
-                    <Route path="/Reserve" element={<ReservationView />} />
+                    <Route path="/Reserve" element={<ReservationView  />} />
                 </Routes>
                 
             </div>

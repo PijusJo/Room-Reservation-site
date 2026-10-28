@@ -45,6 +45,11 @@ namespace Backend.Models
             this.status = status;
         }
 
-
+        public RoomDTO GetDTO()
+        {
+            return new RoomDTO(
+                this.id,
+                this.location + ", " + this.name);
+        }
     }
 }

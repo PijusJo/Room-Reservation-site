@@ -10,6 +10,13 @@ namespace Backend.Controllers
     [Route("api/[controller]")]
     public class RoomsController(AppDbContext context) : Controller
     {
+        [HttpGet("GetDTO")]
+        public ActionResult<RoomDTO> GetDTO()
+        {
+            var rooms = context.Rooms.Select(room => room.GetDTO()).ToList();
+            return Ok(rooms);
+        }
+
         [HttpGet("{id}")]
         public ActionResult<Room> GetById(int id)
         {
@@ -62,5 +69,7 @@ namespace Backend.Controllers
             // Execute the query and return the matching rooms
             return Ok(query.ToList());
         }
+
+        
     }
 }

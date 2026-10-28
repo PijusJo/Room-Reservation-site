@@ -15,6 +15,7 @@ function ReservationStatusupdate({reservationId, SetStateTo, ButtonText}: {reser
             if (response.ok) {
                 // Optional: trigger a refresh or state update in your parent view
                 console.log("Reservation status updated successfully!");
+                window.location.reload()
                 
             } else {
                 const errorText = await response.text();
