@@ -19,19 +19,19 @@ function SingleReservationView({reservation}: {reservation: Reservation}){
                 </div>
             </div>
             <div className = "row bg-light">
-                <div className = "border border-secondary border-3 p-3 col">
+                <div className = "border border-secondary border-3 col">
                     <div className = "row">Status:</div> 
                     <div className = "fw-bold row">{reservation.status}</div>
                 </div>
-                <div className = "border border-secondary border-3 p-3 col">
+                <div className = "border border-secondary border-3 col">
                     <div className = "row">End date:</div> 
                     <div className = "fw-bold row">{reservation.endDate + ''}</div>
                 </div>
-                <div className = "border border-secondary border-3 p-3 col">
+                <div className = "border border-secondary border-3 col">
                     <div className = "row">Star date:</div> 
                     <div className = "fw-bold row">{reservation.startDate + ''}</div>
                 </div>
-                <div className = "border border-secondary border-3 p-3 col">
+                <div className = "border border-secondary border-3 col">
                     <div className = "row">Attendes:</div> 
                     <div className = "fw-bold row">{reservation.attendees}</div>
                 </div>

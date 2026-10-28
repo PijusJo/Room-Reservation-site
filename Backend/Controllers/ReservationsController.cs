@@ -16,8 +16,8 @@ namespace Backend.Controllers
         public ActionResult<Reservation> GetAll()
         {
             var reservations = context.Reservations
-                .Include(r => r.room)  // <-- Crucial for roomNameAndLocation
-                .Include(r => r.user)  // <-- Crucial for userFullName
+                .Include(r => r.room) 
+                .Include(r => r.user)  
                 .ToList();
             return Ok(reservations.ToList());
         }

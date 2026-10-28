@@ -3,7 +3,7 @@ import SingleReservationView from './SingleReservationView'
 import type { Reservation } from '@/Types/Reservation';
 
 function ReservationListView(){
-    const [users, setUsers] = useState<Reservation[]>([]);
+    const [Reservations, setReservations] = useState<Reservation[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null); 
 
@@ -16,7 +16,7 @@ function ReservationListView(){
                 return response.json();
             })
             .then((data) => {
-                setUsers(data);
+                setReservations(data);
                 setLoading(false);
             })
             .catch((err) => {
@@ -25,13 +25,13 @@ function ReservationListView(){
             });
     }, []);
 
-    if (loading) return <div>Loading users...</div>;
+    if (loading) return <div>Loading Data...</div>;
     if (error) return <div className="text-danger">Error: {error}</div>;
 
     return(
         <div>
             <div className='containter'>
-                { users.map((currentReserve)=>(
+                { Reservations.map((currentReserve)=>(
                     <SingleReservationView key={currentReserve.id} reservation = {currentReserve}/>
                 ))
                 }

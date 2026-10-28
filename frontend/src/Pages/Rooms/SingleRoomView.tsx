@@ -1,6 +1,7 @@
 import type { Room } from '@/Types/Room'
 import CheckmakrOrX from './CheckmarkOrX'
 import {ReserveRoomButton} from './ReserveRoomButton'
+import {RoomStatsButton} from './RoomStatsButton'
 
 function RoomView({room, userId, HaveReserveButton}: {room: Room, userId?:number, HaveReserveButton:boolean}) {
     
@@ -21,11 +22,17 @@ function RoomView({room, userId, HaveReserveButton}: {room: Room, userId?:number
                     <div className = "border border-secondary rounded p-1 bg-light"> Id: {room.id} </div>
                     <div className = "border border-secondary rounded p-1 bg-light"> Location: {room.location}</div>
                     <div className = "border border-secondary rounded p-1 bg-light"> {room.name} </div>
+                    <div className='row'>
                     {userId != null && HaveReserveButton && (
-                        <div className="mt-3">
+                        <div className="col mt-3">
                             <ReserveRoomButton room={room} userId={userId} />
                         </div>
                     )}
+                        <div className="col mt-3">
+                            <RoomStatsButton room={room} />
+                        </div>
+                    </div>
+                    
                 </div>
                 <div className = "col-sm-6">
                     <div className = "border border-secondary rounded p-1 bg-light">

@@ -70,6 +70,41 @@ namespace Backend.Controllers
             return Ok(query.ToList());
         }
 
-        
+        [HttpGet("Reservations/{id}")]
+        public ActionResult<IEnumerable<Reservation>> GetRoomsReseravtions(int id)
+        {
+            var reservations = context.Reservations
+                                        .Where(r => r.roomId == id)
+                                        .Include(r => r.room)
+                                        .Include(r => r.user)
+                                        .ToList();
+            return Ok(reservations);
+        }
+        [HttpGet("ReservationData/{id}")]
+        public ActionResult<IEnumerable<RoomReservationsInfo>> GetRoomsReseravtionsInfo(int id)
+        {
+            RoomReservationsInfo RoomInfo = new RoomReservationsInfo();
+            var room = context.Rooms.Find(id);
+            if (room == null)
+                return BadRequest($"No room exists with id {id}");
+            foreach(Reservation r in context.Reservations.Where(r => r.roomId == id)){
+                RoomInfo.TotalReservations++;
+                switch (r.status){
+                    case "Booked":
+                        RoomInfo.ActiveBookings++;
+                        break;
+                    case "Cancelled":
+                        RoomInfo.CanceledBookings++;
+                        break;
+                    case "Completed":
+                        RoomInfo.CanceledBookings++;
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+            return Ok(RoomInfo);
+        }
     }
 }
