@@ -1,30 +1,47 @@
 import type { Reservation } from '@/Types/Reservation';
+import ReservationStatusupdate from './ChangeReservationStateButton'
 
 function SingleReservationView({reservation}: {reservation: Reservation}){
     return(
-        <div className = "border border-secondary border-3 p-3 container">
-            <div className = "row">
-                <div className="col-sm-3">meeting</div>
-                <div className="col-sm-3">room name, Location</div>
-                <div className="col-sm-3">User</div>
-            </div>
-            <div className = "row">
-                <div className="border border-secondary border-3 p-3 col-sm-3">{reservation.meetingTitle}</div>
-                <div className="border border-secondary border-3 p-3 col-sm-3">{reservation.roomNameAndLocation}</div>
-                <div className="border border-secondary border-3 p-3 col-sm-3">{reservation.userFullName}</div>
-            </div>
-            <div className = "row-8">
-                <div className="col-sm-8 row g-0">
-                    <div className = "col-sm-2">status</div>
-                    <div className = "col-sm-2">endDate</div>
-                    <div className = "col-sm-2">startDate</div>
-                    <div className = "col-sm-2">Atendees</div>
+        <div style={{ backgroundColor: '#b6b5b5' }} className = "border border-secondary border-3 p-3">
+            <div className = "row bg-light">
+                <div className="border border-secondary border-3 col">
+                    <div className = "row">Meting Title:</div> 
+                    <div className = "fw-bold row">{reservation.meetingTitle}</div>
                 </div>
-                <div className="col-sm-8 row g-0">
-                    <div className = "border border-secondary border-3 p-3 col-sm-2">{reservation.status}</div>
-                    <div className = "border border-secondary border-3 p-3 col-sm-2">{reservation.endDate + ''}</div>
-                    <div className = "border border-secondary border-3 p-3 col-sm-2">{reservation.startDate + ''}</div>
-                    <div className = "border border-secondary border-3 p-3 col-sm-2">{reservation.attendees}</div>
+                <div className="border border-secondary border-3 col">
+                    <div className = "row">Location:</div> 
+                    <div className = "fw-bold row">{reservation.roomNameAndLocation}</div>
+                </div>
+                <div className="border border-secondary border-3 col">
+                    <div className = "row">User:</div> 
+                    <div className = "fw-bold row">{reservation.userFullName}</div>
+                </div>
+            </div>
+            <div className = "row bg-light">
+                <div className = "border border-secondary border-3 p-3 col">
+                    <div className = "row">Status:</div> 
+                    <div className = "fw-bold row">{reservation.status}</div>
+                </div>
+                <div className = "border border-secondary border-3 p-3 col">
+                    <div className = "row">End date:</div> 
+                    <div className = "fw-bold row">{reservation.endDate + ''}</div>
+                </div>
+                <div className = "border border-secondary border-3 p-3 col">
+                    <div className = "row">Star date:</div> 
+                    <div className = "fw-bold row">{reservation.startDate + ''}</div>
+                </div>
+                <div className = "border border-secondary border-3 p-3 col">
+                    <div className = "row">Attendes:</div> 
+                    <div className = "fw-bold row">{reservation.attendees}</div>
+                </div>
+            </div>
+            <div className = "row">
+                <div className = 'col'>
+                    <ReservationStatusupdate reservationId={reservation.id} SetStateTo='Cancelled' ButtonText='Cancel booking'/>
+                </div>
+                <div className = 'col'>
+                    <ReservationStatusupdate reservationId={reservation.id} SetStateTo='Completed' ButtonText='Complete booking early'/>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import type {User} from '@/Types/User'
 import RoomsListPage from './Pages/Rooms/RoomLists'; // Your other page component
 import ReservationListPage from './Pages/Reservations/ReservationListView'
 import UserListPage from './Pages/Users/UserListview'
-import ReservationView from './Pages/Reserve/ReservationView'
+import ReservationView from './Pages/ReserveRoom/ReservationView'
 
 function App() {
     //Simulates a logged in user, in this case the logged in user is the first one in the Db
@@ -53,7 +53,7 @@ function App() {
                     {/* <Route path="/" element={<RoomsPage />} /> */}
                     <Route path="/Users" element={<UserListPage user={currentUser}/>} />
                     <Route path="/Rooms" element={<RoomsListPage user={currentUser} />} />
-                    <Route path="/Reservations" element={<ReservationListPage user={currentUser}/>} />
+                    <Route path="/Reservations" element={<ReservationListPage />} />
                     <Route path="/Reserve" element={<ReservationView />} />
                 </Routes>
                 

@@ -5,7 +5,6 @@ import type { Room } from '@/Types/Room';
 import {API_URL} from '@/constants';
 import type { RoomFilterOptions } from '@/Types/RoomFiltersOptions';
 import type { User } from '@/Types/User';
-import { ReserveRoomButton } from './ReserveRoomButton';
 
 function RoomList({user}: {user:User}) {
 
@@ -67,13 +66,11 @@ function RoomList({user}: {user:User}) {
     return (
         
     <div className='container'>
-        <RoomFilter Options={inputs} setOptions={setInputs}/>
-        <button onClick={handeApplyFilters}>ApplyFilters</button>
+        <RoomFilter Options={inputs} setOptions={setInputs} onApply={handeApplyFilters}/>
         {   
             rooms.map((currentroom)=>(
                 <div key={currentroom.id}>
-                    <RoomView room = {currentroom}/>
-                    <ReserveRoomButton room = {currentroom} user = {user} />
+                    <RoomView room = {currentroom} userId={user.id} HaveReserveButton={true}/>
                 </div>
                 
             ))

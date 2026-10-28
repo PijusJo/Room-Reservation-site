@@ -1,7 +1,6 @@
 import type { ReservationInfo } from '@/Types/ReservationInfo';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { Room } from '@/Types/Room';
-import type { User } from '@/Types/User';
 import SingleRoomView from '@/Pages/Rooms/SingleRoomView'
 import { useState } from 'react';
 
@@ -9,14 +8,14 @@ export default function ReservationView(){
     const location = useLocation();
     const navigate = useNavigate();
     
-    const state = location.state as { Room?: Room; User?: User } | null;
+    const state = location.state as { Room?: Room; userId?: number } | null;
     const room = state?.Room;
-    const user = state?.User;
+    const userId = state?.userId;
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
     
-    if (!room || !user) {
+    if (!room || !userId) {
         return (
             <div className="container mt-5">
                 <div className="alert alert-warning">
@@ -27,7 +26,7 @@ export default function ReservationView(){
     }
 
     const [reservationInfo, setreservationInfo] = useState<ReservationInfo>({
-        UserId: user.id,
+        UserId: userId,
         RoomId: room.id,
         MeetingTitle: "",
         StartDate:new Date(),
@@ -74,7 +73,7 @@ export default function ReservationView(){
         <div className='container'>
             <div className = 'row'>
                 <h1>Current Room</h1>
-                <SingleRoomView room={room}/>
+                <SingleRoomView room={room} HaveReserveButton={false}/>
             </div>
             <div className = 'row'>
                 <h1>Reservation Options</h1>
@@ -141,14 +140,16 @@ export default function ReservationView(){
                 </div>
             )}
 
-
-            <button 
-                className="btn btn-primary" 
-                onClick={handleReserve}
-                disabled={isSubmitting}
-            >
-                {isSubmitting ? 'Submitting...' : 'Reserve This Room'}
-            </button>
+            <div className='row p-3'>
+                <button 
+                    className="btn btn-primary w-100" 
+                    onClick={handleReserve}
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? 'Submitting...' : 'Reserve This Room'}
+                </button>
+            </div>
+            
         </div>
     )
 }

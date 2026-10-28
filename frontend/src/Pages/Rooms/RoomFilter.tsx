@@ -3,9 +3,10 @@ import type { RoomFilterOptions } from '@/Types/RoomFiltersOptions';
 interface RoomFilterProps {
     Options: RoomFilterOptions;
     setOptions: React.Dispatch<React.SetStateAction<RoomFilterOptions>>;
+    onApply?: () => void;
 }
 
-function RoomFilter({Options, setOptions}: RoomFilterProps){
+function RoomFilter({Options, setOptions, onApply}: RoomFilterProps){
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         const target = e.target;
@@ -51,6 +52,9 @@ function RoomFilter({Options, setOptions}: RoomFilterProps){
                             value={Options.location}
                         />
                     </div>
+                </div>
+                <div className="row p-2">
+                    <button onClick={onApply}>ApplyFilters</button>
                 </div>
             </div>
             <div className = "col">

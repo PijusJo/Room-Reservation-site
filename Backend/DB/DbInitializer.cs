@@ -17,11 +17,11 @@ namespace Backend.DB
 
             User[] users =
             {
-                new User("John", "Doe", 2),
-                new User("Jane", "Smith", 0),
-                new User("Alice", "Johnson", 1),
-                new User("Bob", "Brown", 3),
-                new User("Emily", "Davis", 0)
+                new User("John", "Doe"),
+                new User("Jane", "Smith"),
+                new User("Alice", "Johnson"),
+                new User("Bob", "Brown"),
+                new User("Emily", "Davis")
             };
             Room[] rooms =
             {
@@ -34,35 +34,35 @@ namespace Backend.DB
             Reservation[] reservations =
             {
                 new Reservation(
-                    roomId: 0,
-                    userid: 0,
+                    roomId: 1,
+                    userid: 1,
                     meetingTitle: "Q3 Strategy Planning",
                     startDate: new DateOnly(2026, 6, 1),
                     endDate: new DateOnly(2026, 6, 3),
-                    status: "Confirmed",
+                    status: "Booked",
                     attendees: 8
-                ),
-                new Reservation(
-                    roomId: 1,
-                    userid: 1,
-                    meetingTitle: "UI/UX Design Sync",
-                    startDate: new DateOnly(2026, 6, 5),
-                    endDate: new DateOnly(2026, 6, 5),
-                    status: "Pending",
-                    attendees: 4
                 ),
                 new Reservation(
                     roomId: 2,
                     userid: 2,
-                    meetingTitle: "Client Presentation",
-                    startDate: new DateOnly(2026, 6, 10),
-                    endDate: new DateOnly(2026, 6, 12),
-                    status: "Confirmed",
-                    attendees: 12
+                    meetingTitle: "UI/UX Design Sync",
+                    startDate: new DateOnly(2026, 6, 5),
+                    endDate: new DateOnly(2026, 6, 5),
+                    status: "Booked",
+                    attendees: 4
                 ),
                 new Reservation(
                     roomId: 3,
                     userid: 3,
+                    meetingTitle: "Client Presentation",
+                    startDate: new DateOnly(2026, 6, 10),
+                    endDate: new DateOnly(2026, 6, 12),
+                    status: "Booked",
+                    attendees: 12
+                ),
+                new Reservation(
+                    roomId: 4,
+                    userid: 4,
                     meetingTitle: "Code Review & Refactoring",
                     startDate: new DateOnly(2026, 6, 15),
                     endDate: new DateOnly(2026, 6, 15),
@@ -70,12 +70,12 @@ namespace Backend.DB
                     attendees: 2
                 ),
                 new Reservation(
-                    roomId: 4,
-                    userid: 4,
+                    roomId: 5,
+                    userid: 5,
                     meetingTitle: "Team Retrospective",
                     startDate: new DateOnly(2026, 6, 20),
                     endDate: new DateOnly(2026, 6, 21),
-                    status: "Confirmed",
+                    status: "Completed",
                     attendees: 10
                 )
             };

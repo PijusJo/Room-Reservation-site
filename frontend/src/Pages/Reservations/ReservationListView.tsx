@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import SingleReservationView from './SingleReservationView'
 import type { Reservation } from '@/Types/Reservation';
-import type { User } from '@/Types/User';
 
-function ReservationListView({user}: {user:User}){
+function ReservationListView(){
     const [users, setUsers] = useState<Reservation[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null); 
@@ -31,7 +30,7 @@ function ReservationListView({user}: {user:User}){
 
     return(
         <div>
-            <div>
+            <div className='containter'>
                 { users.map((currentReserve)=>(
                     <SingleReservationView key={currentReserve.id} reservation = {currentReserve}/>
                 ))

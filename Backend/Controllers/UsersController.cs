@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Backend.DB;
 using Backend.Models;
-using Backend.DB;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers
 {
@@ -13,7 +14,9 @@ namespace Backend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<User>> GetAll()
         {
-            return Ok(context.Users.ToList());
+            return Ok(context.Users
+                .Include(u => u.Reservations)
+                .ToList());
         }
         [HttpGet("{id}")]
         public ActionResult<User> GetById(int id)

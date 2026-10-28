@@ -89,13 +89,13 @@ namespace Backend.Controllers
             if (thisRoomReservedbythisuser != null){
                 return BadRequest($"User can't have more than one booked reservation in this room");
             }
-                    
 
             List<Reservation> RoomsBookings = context.Reservations
                                                     .Where(r => r.roomId == model.RoomId)
                                                     .Where(r => r.status == "Booked")
                                                     .ToList();
-            foreach(Reservation r in RoomsBookings)
+            
+            foreach (Reservation r in RoomsBookings)
             {
                 if(r.startDate >= model.StartDate && r.startDate <=  model.EndDate || r.endDate >= model.StartDate && r.endDate <= model.EndDate)
                     return BadRequest($"room bookings must not overlap");
@@ -117,5 +117,23 @@ namespace Backend.Controllers
             return Ok();
         }
 
+        [HttpPatch("{id}")]
+        public IActionResult UpdateState(int id, [FromBody] ReservationStateDTO model)
+        {
+            Reservation? rez = context.Reservations.FirstOrDefault(r => r.id == id);
+            if (rez == null)
+                return BadRequest($"No reservation with the id {id} exists in database");
+            if (model.NewState != "Cancelled" && model.NewState != "Completed")
+            {
+                return BadRequest($"new State '{model.NewState}' is unhandled in backend");
+            }
+            if (rez.status != "Booked")
+            {
+                return BadRequest($"Current Status must be booked to change status");
+            }
+            rez.status = model.NewState;
+            context.SaveChanges();
+            return Ok();
+        }
     }
 }

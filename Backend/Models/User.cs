@@ -13,20 +13,38 @@ namespace Backend.Models
         [Required]
         public string lastName { get; set; }
         [Required]
-        public int activeRezervations { get; set; }
+        
 
         
         [JsonIgnore]
-        public ICollection<Reservation> Reservations { get; set; }
+        public ICollection<Reservation>? Reservations { get; set; }
 
         public User(){
 
         }
-        public User(string fname, string lname, int activeres)
+        public User(string fname, string lname)
         {
             firstName = fname;
             lastName = lname;
-            activeRezervations = activeres;
         }
-    }
+
+
+        public int activeRezervations
+        {
+            get
+            {
+                if (Reservations == null) return 0;
+                int count = 0;
+                foreach (Reservation? r in Reservations) { 
+                    if(r.status == "Booked")
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            }
+        }
+
+    };
 }
+
